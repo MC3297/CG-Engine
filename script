@@ -1,0 +1,17 @@
+push
+move
+250 250 0
+push
+rotate
+z 50
+rotate
+y 50
+rotate
+x 60
+torus
+0 0 0 30 175
+pop
+pop
+display
+save
+face.png
