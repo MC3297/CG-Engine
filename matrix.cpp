@@ -81,20 +81,10 @@ void matrix::add_poly(vector<db> a, vector<db> b, vector<db> c) {
 #define EPS 0.00001
 void matrix::draw_poly(vector<vector<color>>& plot, vector<vector<db>>& zb, color camb, vector<color> clight, vector<Vec3> light, Vec3 view, Vec3 kamb, Vec3 kdiff, Vec3 kspec) {
     for (int i = 0; i < horiz; i += 3) {
-        bool bad = 0;
-        for (int a = 0; a < 3; a++) {
-            for (int b = a+1; b < 3; b++) {
-                bad |= (ma[i+a] == ma[i+b]);
-                bad |= (distsqred(ma[i+a],ma[i+b]) < EPS);
-            }
-        }
-        if (bad) continue;
         Vec3 norm = normal_surface(ma[i], ma[i+1], ma[i+2]);
         db d = dot_prod(norm, {0,0,1});
         if (d > 0) {
-            //color abc(rand()%256, rand()%256, rand()%256);
             color c = get_lighting(camb, clight, light, view, norm, kamb, kdiff, kspec);
-            //cerr << c.to_str() << '\n';
             scanline_convert(i, plot, zb, c);
         }
     }
@@ -110,7 +100,7 @@ void matrix::draw_scanline(db x0, db x1, db z0, db z1, db y, vector<vector<color
     x0 = x0-1;
     for (int i = x0; i <= x1; i++) {
         if (0 <= i && i < (int)plot.size() && 0 <= y && y < (int)plot[0].size()) {
-            if (z-zb[i][y] > 5 && !isnan(z)) {//this works better
+            if (z-zb[i][y] >= 7 && !isnan(z)) {//this works better
                 plot[i][y] = c;
                 zb[i][y] = z;
             }

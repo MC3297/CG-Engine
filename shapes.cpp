@@ -66,29 +66,3 @@ void add_torus(matrix& m, db cx, db cy, db cz, db r1, db r2, int step) {
         }
     }
 }
-
-/*vector<vector<vector<db>>> gen_bezier(vector<db> vx, vector<db> vy, int step) {
-    vector<vector<vector<db>>> ans(step+1);
-    matrix m;
-    for (int t = 0; t <= step; t++) {
-        db xcurr = polynomial(vx, 1-(db)t/step, (db)t/step);
-        db ycurr = polynomial(vy, 1-(db)t/step, (db)t/step);
-        m.add_point(xcurr, ycurr, 0);
-    }
-    for (int rot = 0; rot <= step; rot++) {//step+1
-        ans[rot] = (mk_rotY(rot*-360/step)*m).ma;
-    }
-    return ans;
-}
-
-void add_bezier_shape(matrix& m, array<db,4> vx, array<db,4> vy, int step) {
-    auto pts = gen_bezier(vx, vy, step);
-    for (int rot = 0; rot < (int)pts.size()-1; rot++) {
-        for (int circ = 0; circ < (int)pts[0].size()-1; circ++) {
-            //m.add_poly(pts[rot][circ], pts[rot+1][circ], pts[rot+1][circ+1]);
-            //m.add_poly(pts[rot+1][circ+1], pts[rot][circ+1], pts[rot][circ]);
-            m.add_poly(pts[rot+1][circ+1], pts[rot+1][circ], pts[rot][circ]);
-            m.add_poly(pts[rot][circ], pts[rot][circ+1], pts[rot+1][circ+1]);
-        }
-    }
-}*/
