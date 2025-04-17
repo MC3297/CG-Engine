@@ -1,8 +1,4 @@
-#pragma once
-
-#include "types.h"
-#include "color.h"
-#include "vector_math.h"
+#include "lighting.hpp"
 
 color get_amb(color camb, Vec3 kamb) {
     return color(camb.r*kamb[0], camb.g*kamb[1], camb.b*kamb[2]);

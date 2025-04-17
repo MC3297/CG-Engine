@@ -1,15 +1,31 @@
 push
 move
-250 250 0
+120 250 0
+scale
+0.7 0.7 0.7
 push
 rotate
-z 50
+z 10
 rotate
-y 50
+y 0
 rotate
-x 60
-torus
-0 0 0 30 175
+x 20
+sphere
+0 -70 0 100
+sphere
+0 70 0 100
+push
+scale
+4 1 1
+sphere
+50 0 0 70
+pop
+push
+scale
+1.2 1 1
+sphere
+360 0 0 65
+pop
 pop
 pop
 display

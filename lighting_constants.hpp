@@ -1,8 +1,8 @@
 #pragma once
 
-#include "types.h"
-#include "color.h"
-#include "vector_math.h"
+#include "types.hpp"
+#include "color.hpp"
+#include "vector_math.hpp"
 
 color camb(50,50,50);
 vector<color> clight = {color(0,255,255)};

@@ -1,7 +1,4 @@
-#pragma once
-
-#include "types.h"
-#include "matrix.h"
+#include "matrix_transform.hpp"
 
 matrix mk_translate(db x, db y, db z) {
     matrix ans;

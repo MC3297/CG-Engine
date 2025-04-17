@@ -1,12 +1,13 @@
-#include "template.cpp"
-#include "types.h"
-#include "color.h"
-#include "lighting_constants.h"
-#include "vector_math.h"
-#include "bresenham_line.h"
-#include "matrix.h"
-#include "matrix_transform.h"
-#include "lighting.h"
+#include "types.hpp"
+#include "color.hpp"
+#include "lighting_constants.hpp"
+#include "vector_math.hpp"
+#include "bresenham_line.hpp"
+#include "matrix.hpp"
+#include "matrix_transform.hpp"
+#include "lighting.hpp"
+#include "curves.hpp"
+#include "shapes.hpp"
 
 template<class T> void read(T &x) {cin >> x;}
 template<class H, class... T> void read(H &h, T &...t) { read(h); read(t...); }
